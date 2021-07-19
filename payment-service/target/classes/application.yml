@@ -1,0 +1,36 @@
+server:
+  port: 4040
+spring:
+  datasource:
+    password: hr
+    url: jdbc:oracle:thin:@//localhost:1521/XEPDB1
+    username: hr
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    
+   
+  application:
+    name: payment-service
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:6060/eureka
+  instance:
+     prefer-ip-address: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "*"
+        
+info:
+  name: Payment Service

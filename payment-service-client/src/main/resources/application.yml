@@ -1,0 +1,14 @@
+server:
+  port: 5050
+  
+spring:
+  application:
+    name: payment-client
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:6060/eureka
+  instance:
+     prefer-ip-address: true
